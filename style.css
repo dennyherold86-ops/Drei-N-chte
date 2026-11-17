@@ -1,0 +1,1594 @@
+/* ======================================================
+   DREI NÄCHTE
+   Style.css
+   Teil 2A - Grundlayout
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    color:#ffffff;
+
+    overflow:hidden;
+
+    background:#090909;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ===========================
+   Hintergrund
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("background.png");
+    background-size:cover;
+    background-position:center;
+    will-change: transform;
+    transition: transform .25s ease-out;
+
+    --moveX: 0px;
+    --moveY: 0px;
+
+    transform:
+        scale(1.25)
+        translate(var(--moveX), var(--moveY));
+
+    filter:
+        blur(45px)
+        brightness(.22)
+        saturate(.8);
+
+    z-index:-3;
+
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.02),
+        rgba(0,0,0,.65));
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   Intro
+=========================== */
+
+#intro{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    transition:1.5s;
+
+}
+
+.intro-content{
+
+    max-width:650px;
+
+    padding:40px;
+
+}
+
+.heart{
+
+    font-size:46px;
+
+    margin-bottom:25px;
+
+}
+
+#intro h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.intro-text{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    opacity:.85;
+
+}
+
+/* ===========================
+   Hauptbereich
+=========================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+#playerPage{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/* ===========================
+   Player Card
+=========================== */
+
+.player-card{
+
+    width:100%;
+    max-width:520px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 15px 50px rgba(0,0,0,.45),
+
+        inset 0 1px rgba(255,255,255,.05);
+
+    text-align:center;
+
+}
+
+/* ===========================
+   Cover
+=========================== */
+
+.cover-wrapper{
+
+    width:320px;
+    height:320px;
+
+    margin:auto;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 15px 45px rgba(0,0,0,.45);
+
+}
+
+.cover-wrapper img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+/* ===========================
+   Überschriften
+=========================== */
+
+h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:44px;
+
+    margin-top:30px;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+h3{
+
+    font-weight:400;
+
+    font-size:23px;
+
+    margin-bottom:12px;
+
+}
+
+.subtitle{
+
+    opacity:.75;
+
+    font-size:15px;
+
+    margin-bottom:40px;
+
+}
+
+/* ===========================
+   Play Button
+=========================== */
+
+#playButton{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#ffffff;
+
+    color:#111111;
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+    transition:.3s;
+
+}
+
+#playButton:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   Progress
+=========================== */
+
+.progress-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:30px;
+
+}
+
+#progress{
+
+    flex:1;
+
+}
+
+#currentTime,
+#duration{
+
+    width:48px;
+
+    font-size:14px;
+
+    opacity:.8;
+
+}
+
+/* ===========================
+   Lautstärke
+=========================== */
+
+.volume{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+#volume{
+
+    width:180px;
+
+}
+
+/* ===========================
+   Outro
+=========================== */
+
+#ending{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.ending-card{
+
+    max-width:720px;
+
+}
+
+.ending-card p{
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    margin-bottom:22px;
+
+}
+
+.ending-card h1{
+
+    margin-top:40px;
+
+}
+
+.signature{
+
+    margin-top:60px;
+
+    opacity:.85;
+
+}
+
+/* ======================================================
+   Teil 2B - Animationen & Feinschliff
+====================================================== */
+
+/* ---------- Fade Animationen ---------- */
+
+.fade-in{
+    animation:fadeIn 1.2s ease forwards;
+}
+
+.fade-out{
+    animation:fadeOut 1s ease forwards;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+    }
+
+}
+
+/* ---------- Herz ---------- */
+
+.heart{
+
+    animation:heartbeat 3.5s ease-in-out infinite;
+
+    transform-origin:center;
+
+}
+
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(1.08);
+    }
+
+    50%{
+        transform:scale(1);
+    }
+
+    75%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+/* ---------- Cover ---------- */
+
+#cover{
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+/* wird per JavaScript aktiviert */
+
+.cover-rotate{
+
+    animation:rotateAlbum 240s linear infinite;
+
+}
+
+@keyframes rotateAlbum{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ---------- Cover Glow ---------- */
+
+.cover-wrapper{
+
+    transition:.4s;
+
+}
+
+.cover-wrapper:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.55),
+
+        0 0 40px rgba(255,255,255,.08);
+
+}
+
+/* ---------- Player Card ---------- */
+
+.player-card{
+
+    transition:.5s;
+
+}
+
+.player-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,.55),
+
+        inset 0 1px rgba(255,255,255,.08);
+
+}
+
+/* ---------- Play Button ---------- */
+
+#playButton{
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.35);
+
+}
+
+#playButton:active{
+
+    transform:scale(.95);
+
+}
+
+/* ---------- Slider ---------- */
+
+input[type=range]{
+
+    appearance:none;
+
+    height:5px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.15);
+
+    cursor:pointer;
+
+}
+
+/* Chrome */
+
+input[type=range]::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+}
+
+/* Firefox */
+
+input[type=range]::-moz-range-thumb{
+
+    width:15px;
+
+    height:15px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+}
+
+/* ---------- Text ---------- */
+
+.subtitle{
+
+    letter-spacing:.8px;
+
+}
+
+/* ---------- Outro ---------- */
+
+.pause{
+
+    height:40px;
+
+}
+
+.ending-card{
+
+    animation:fadeIn 2s ease;
+
+}
+
+.ending-heart{
+
+    animation:
+
+        heartbeat 2.5s ease-in-out infinite,
+
+        fadeIn 2s ease;
+
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+/* ---------- Kleine Details ---------- */
+
+button,
+input{
+
+    outline:none;
+
+}
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ---------- Sanftes Erscheinen ---------- */
+
+.player-card{
+
+    animation:fadeIn 1.6s ease;
+
+}
+
+.intro-content{
+
+    animation:fadeIn 2s ease;
+
+}
+
+/* ======================================================
+   Teil 2C - Responsive & Finish
+====================================================== */
+
+
+/* -----------------------------
+   Desktop > 1400px
+----------------------------- */
+
+@media (min-width:1400px){
+
+.player-card{
+
+    max-width:560px;
+    padding:55px;
+
+}
+
+.cover-wrapper{
+
+    width:360px;
+    height:360px;
+
+}
+
+h1{
+
+    font-size:48px;
+
+}
+
+}
+
+
+/* -----------------------------
+   Laptop
+----------------------------- */
+
+@media (max-width:1200px){
+
+.player-card{
+
+    max-width:500px;
+
+}
+
+.cover-wrapper{
+
+    width:300px;
+    height:300px;
+
+}
+
+}
+
+
+/* -----------------------------
+   Tablet
+----------------------------- */
+
+@media (max-width:900px){
+
+.player-card{
+
+    max-width:460px;
+
+    padding:35px;
+
+}
+
+.cover-wrapper{
+
+    width:270px;
+    height:270px;
+
+}
+
+h1{
+
+    font-size:38px;
+
+}
+
+h3{
+
+    font-size:20px;
+
+}
+
+.subtitle{
+
+    font-size:14px;
+
+}
+
+}
+
+
+/* -----------------------------
+   iPhone Plus / Android
+----------------------------- */
+
+@media (max-width:650px){
+
+body{
+
+    padding:20px;
+
+}
+
+.player-card{
+
+    width:100%;
+
+    padding:28px;
+
+    border-radius:22px;
+
+}
+
+.cover-wrapper{
+
+    width:230px;
+    height:230px;
+
+}
+
+h1{
+
+    font-size:34px;
+
+}
+
+h3{
+
+    font-size:19px;
+
+}
+
+.subtitle{
+
+    margin-bottom:30px;
+
+}
+
+#playButton{
+
+    width:75px;
+    height:75px;
+
+    font-size:28px;
+
+}
+
+.progress-container{
+
+    gap:8px;
+
+}
+
+#currentTime,
+#duration{
+
+    width:42px;
+
+    font-size:12px;
+
+}
+
+#volume{
+
+    width:120px;
+
+}
+
+.intro h2{
+
+    font-size:34px;
+
+}
+
+.intro-text{
+
+    font-size:18px;
+
+}
+
+.ending-card p{
+
+    font-size:19px;
+
+}
+
+}
+/* -----------------------------
+   Kleine iPhones
+----------------------------- */
+
+@media (max-width:430px){
+
+.player-card{
+
+    padding:22px;
+
+}
+
+.cover-wrapper{
+
+    width:200px;
+    height:200px;
+
+}
+
+h1{
+
+    font-size:30px;
+
+}
+
+h3{
+
+    font-size:17px;
+
+}
+
+.subtitle{
+
+    font-size:13px;
+
+}
+
+.intro-content{
+
+    padding:20px;
+
+}
+
+.intro-text{
+
+    font-size:17px;
+
+    line-height:1.6;
+
+}
+
+.heart{
+
+    font-size:38px;
+
+}
+
+#playButton{
+
+    width:68px;
+    height:68px;
+
+    font-size:24px;
+
+}
+
+.volume{
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+#volume{
+
+    width:150px;
+
+}
+
+.ending-card h1{
+
+    font-size:30px;
+
+}
+
+.ending-card h2{
+
+    font-size:28px;
+
+}
+
+.ending-card p{
+
+    font-size:18px;
+
+}
+
+.signature{
+
+    font-size:17px;
+
+}
+
+}
+
+
+/* -----------------------------
+   Landscape Handy
+----------------------------- */
+
+@media (max-height:650px){
+
+body{
+
+    overflow:auto;
+
+}
+
+.player-card{
+
+    margin:30px auto;
+
+}
+
+}
+
+
+/* -----------------------------
+   Auswahl deaktivieren
+----------------------------- */
+
+body{
+
+    -webkit-user-select:none;
+    user-select:none;
+
+}
+
+
+/* -----------------------------
+   Sanftes Scrollen
+----------------------------- */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* -----------------------------
+   Audio verstecken
+----------------------------- */
+
+audio{
+
+    display:none;
+
+}
+
+
+/* -----------------------------
+   Fokus
+----------------------------- */
+
+button:focus,
+input:focus{
+
+    outline:none;
+
+}
+
+
+/* -----------------------------
+   Bildqualität
+----------------------------- */
+
+#cover{
+
+    image-rendering:auto;
+
+}
+
+
+/* -----------------------------
+   Ende
+----------------------------- */
+/* ===================================
+   Outro Animation
+=================================== */
+
+.blur{
+
+    filter:blur(8px);
+
+    opacity:.15;
+
+    transform:scale(.98);
+
+    transition:all 2s ease;
+
+}
+
+#ending{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 2.5s ease;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(6px);
+
+}
+
+#ending.show{
+
+    opacity:1;
+
+}
+
+.ending-card{
+
+    transform:translateY(25px);
+
+    opacity:0;
+
+    transition:all 2s ease;
+
+}
+
+#ending.show .ending-card{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+/* =====================================
+   Cinematic Lights
+===================================== */
+
+#floatingLights{
+
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.light{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.08;
+
+    filter:blur(10px);
+
+    animation:floatLight linear forwards;
+
+}
+
+@keyframes floatLight{
+
+    from{
+
+        transform:
+            translateY(120vh)
+            scale(.4);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.10;
+
+    }
+
+    80%{
+
+        opacity:.08;
+
+    }
+
+    to{
+
+        transform:
+            translateY(-20vh)
+            scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =====================================
+   Ambient Glow
+===================================== */
+
+.player-playing{
+
+    animation:cardPulse 8s ease-in-out infinite;
+
+}
+
+.cover-glow{
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.12),
+        0 0 80px rgba(255,255,255,.08);
+
+}
+
+.background-playing{
+
+    filter:
+        blur(45px)
+        brightness(.28)
+        saturate(1);
+
+    transition:filter 2s ease;
+
+}
+
+@keyframes cardPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.012);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+/* =====================================
+   Floating Hearts
+===================================== */
+
+#floatingHearts{
+
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.floating-heart{
+
+    position:absolute;
+
+    font-size:20px;
+
+    opacity:0;
+
+    animation:heartFloat linear forwards;
+
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.25));
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+            translateY(110vh)
+            translateX(0)
+            scale(.6)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.18;
+
+    }
+
+    50%{
+
+        transform:
+            translateY(45vh)
+            translateX(20px)
+            scale(.9)
+            rotate(8deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-20vh)
+            translateX(-20px)
+            scale(1.15)
+            rotate(-8deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =====================================
+   Living Background
+===================================== */
+
+.background-breathe{
+
+    animation:backgroundBreathing 18s ease-in-out infinite;
+
+}
+
+@keyframes backgroundBreathing{
+
+    0%{
+
+        filter:
+            blur(45px)
+            brightness(.22)
+            saturate(.80);
+
+        transform:scale(1.25);
+
+    }
+
+    25%{
+
+        filter:
+            blur(46px)
+            brightness(.24)
+            saturate(.85);
+
+        transform:scale(1.265);
+
+    }
+
+    50%{
+
+        filter:
+            blur(48px)
+            brightness(.27)
+            saturate(.92);
+
+        transform:scale(1.28);
+
+    }
+
+    75%{
+
+        filter:
+            blur(46px)
+            brightness(.24)
+            saturate(.86);
+
+        transform:scale(1.265);
+
+    }
+
+    100%{
+
+        filter:
+            blur(45px)
+            brightness(.22)
+            saturate(.80);
+
+        transform:scale(1.25);
+
+    }
+
+}
+
+/* =====================================
+   Circular Visualizer
+===================================== */
+
+.cover-wrapper{
+
+    position:relative;
+
+}
+
+/* =====================================
+   Canvas Visualizer
+===================================== */
+
+#visualizer{
+
+    position:absolute;
+
+    inset:-40px;
+
+    width:calc(100% + 80px);
+
+    height:calc(100% + 80px);
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+/* =====================================
+   Progress Ring
+===================================== */
+
+#progressRing{
+
+    position:absolute;
+
+    inset:-32px;
+
+    overflow:visible;
+
+    pointer-events:none;
+
+}
+
+.ring-bg{
+
+    fill:none;
+
+    stroke:rgba(255,255,255,.08);
+
+    stroke-width:2;
+
+}
+
+#ringProgress{
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    transform-origin:center;
+
+    transform:rotate(-90deg);
+
+    transform-box:fill-box;
+
+}
+
+/* =====================================
+   Finale 1
+===================================== */
+
+body.finale-1 .player-card{
+
+    transform:scale(.995);
+
+    transition:5s;
+
+}
+
+body.finale-1 .background{
+
+    filter:
+
+        blur(50px)
+
+        brightness(.20);
+
+}
+
+body.finale-2 .player-card{
+
+    opacity:.92;
+
+}
+
+body.finale-3 .cover-wrapper{
+
+    box-shadow:
+
+        0 0 20px rgba(255,255,255,.08);
+
+}
+
+/* =====================================
+   Cinematic Fade
+===================================== */
+
+.player-card.final-fade{
+
+    opacity:0;
+
+    transform:scale(.94);
+
+    filter:blur(12px);
+
+    transition:
+        opacity 2.5s ease,
+        transform 2.5s ease,
+        filter 2.5s ease;
+
+}
+
+#visualizer{
+
+    transition:
+        opacity 2s ease;
+
+}
+
+#visualizer.fade{
+
+    opacity:0;
+
+}
+
+#progressRing{
+
+    transition:opacity 2s ease;
+
+}
+
+#progressRing.fade{
+
+    opacity:0;
+
+}
+
+body.song-finished .background{
+
+    filter:
+
+        blur(70px)
+
+        brightness(.10)
+
+        saturate(.45);
+
+    transition:4s;
+
+}
+
+/* =====================================
+   Director's Cut Finale
+===================================== */
+
+#ending p,
+#ending h1,
+#ending h2{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:
+        opacity 1.8s ease,
+        transform 1.8s ease;
+
+}
+
+.show-line{
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}

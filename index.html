@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>❤️ Drei Nächte</title>
+
+    <meta name="description"
+        content="Ein Lied für Ludmila - Von Dominik & Papa">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Hintergrund -->
+    <div class="background"></div>
+
+    <!-- Abdunklung -->
+    <div class="overlay"></div>
+    <div id="particles"></div>
+    <div id="floatingLights"></div>
+    <div id="floatingHearts"></div>
+
+    <!-- Intro -->
+    <section id="intro">
+
+        <div class="intro-content">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <h2>Für Ludmila</h2>
+
+            <p class="intro-text">
+                Manche Helden tragen keinen Umhang.<br>
+                Sie hören niemals auf zu glauben.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Hauptbereich -->
+    <main id="playerPage" class="hidden">
+
+        <div class="player-card">
+
+            <!-- Cover -->
+
+            <div class="cover-wrapper">
+
+                <canvas id="visualizer"></canvas>
+
+                <svg id="progressRing" viewBox="0 0 400 400">
+
+                    <circle class="ring-bg"
+                        cx="200"
+                        cy="200"
+                        r="176" />
+
+                    <circle id="ringProgress"
+                        cx="200"
+                        cy="200"
+                        r="176" />
+
+                </svg>
+
+                <img
+                    id="cover"
+                    src="cover.png"
+                    alt="Cover">
+
+            </div>
+
+            <!-- Songtitel -->
+
+            <h1>Drei Nächte</h1>
+
+            <h3>Für Ludmila ❤️</h3>
+
+            <p class="subtitle">
+                Ein Lied von Dominik & Papa
+            </p>
+
+            <!-- Audio -->
+
+            <audio id="audio" preload="metadata">
+
+                <source
+                    src="Drei Nächte.mp3"
+                    type="audio/mpeg">
+
+            </audio>
+
+            <!-- Play -->
+
+            <button id="playButton" aria-label="Song abspielen">
+
+                <span id="playIcon">▶</span>
+
+            </button>
+                        <!-- Fortschritt -->
+
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progress"
+                    value="0"
+                    min="0"
+                    max="100">
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+            <!-- Lautstärke -->
+
+            <div class="volume">
+
+                🔊
+
+                <input
+                    type="range"
+                    id="volume"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1">
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Abschluss -->
+
+    <section id="ending" class="hidden">
+
+        <div class="ending-card">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <p id="line1">
+
+                Für viele bist du <strong>Ludmila.</strong>
+
+            </p>
+
+            <p id="line2">
+
+                Für Papa bist du
+                <strong>seine große Liebe.</strong>
+
+            </p>
+
+            <p id="line3">
+
+                Für mich...
+
+            </p>
+
+            <h2 id="line4">
+
+                bist du mein Zuhause.
+
+            </h2>
+                        <h1 id="line5">
+
+                Wir haben die drei Nächte geschafft.
+
+            </h1>
+
+            <div class="heart ending-heart">
+                ❤️
+            </div>
+
+            <p class="signature">
+
+                In Liebe
+
+                <br><br>
+
+                Dominik & Papa
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>
