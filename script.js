@@ -145,6 +145,12 @@ function togglePlayback() {
 
     if (audio.paused) {
 
+        if (audio.ended || audio.currentTime === 0) {
+
+            resetEnding();
+
+        }
+
         playSong();
 
     } else {
@@ -832,23 +838,6 @@ function resetEnding() {
         });
 
 }
-
-
-/* ==========================================================
-   SONG NEU STARTEN
-========================================================== */
-
-audio.addEventListener("play", () => {
-
-    if (audio.currentTime < 0.15) {
-
-        resetEnding();
-
-        resetPlayer();
-
-    }
-
-});
 
 
 /* ==========================================================

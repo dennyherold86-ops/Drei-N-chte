@@ -57,9 +57,9 @@ body{
         translate(var(--moveX), var(--moveY));
 
     filter:
-        blur(45px)
-        brightness(.22)
-        saturate(.8);
+        blur(.8px)
+        brightness(.7)
+        saturate(.0);
 
     z-index:-3;
 
