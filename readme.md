@@ -26,11 +26,10 @@ Drei-Nächte
 ├── index.html
 ├── style.css
 ├── script.js
-│
-└── assets
-    ├── cover.png
-    ├── Drei Nächte.mp3
-    └── favicon.png
+├── background.png
+├── cover.png
+├── Drei Nächte.mp3
+└── favicon.png
 ```
 
 ---
@@ -52,8 +51,6 @@ Getestet mit:
 ## Installation
 
 Projekt herunterladen.
-
-Assets in den Ordner **assets** legen.
 
 Anschließend einfach die Datei
 
