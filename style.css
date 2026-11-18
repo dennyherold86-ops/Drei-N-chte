@@ -27,10 +27,6 @@ body{
 
     background:#090909;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
 }
 
 /* ===========================
@@ -58,7 +54,7 @@ body{
 
     filter:
         blur(.8px)
-        brightness(.7)
+        brightness(.75)
         saturate(.0);
 
     z-index:-3;
@@ -86,7 +82,7 @@ body{
 
 #intro{
 
-    position:absolute;
+    position:fixed;
 
     inset:0;
 
@@ -95,8 +91,8 @@ body{
     align-items:center;
 
     text-align:center;
-
-    transition:1.5s;
+    z-index:100;
+    transition:2s;
 
 }
 
@@ -151,6 +147,8 @@ body{
 #playerPage{
 
     width:100%;
+    position:fixed;
+    inset:0;
 
     display:flex;
 
@@ -158,6 +156,20 @@ body{
     align-items:center;
 
     padding:40px;
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+
+}
+
+#playerPage.hidden{
+    display:none !important;
+}
+
+#playerPage.fade-in{
+
+    opacity:1;
 
 }
 
@@ -1227,9 +1239,9 @@ input:focus{
 .background-playing{
 
     filter:
-        blur(45px)
-        brightness(.28)
-        saturate(1);
+        blur(8px)
+        brightness(.75)
+        saturate(0);
 
     transition:filter 2s ease;
 
@@ -1346,11 +1358,11 @@ input:focus{
     0%{
 
         filter:
-            blur(45px)
-            brightness(.22)
-            saturate(.80);
+            blur(8px)
+            brightness(.72)
+            saturate(.0);
 
-        transform:scale(1.25);
+        transform:scale(1.10);
 
     }
 
@@ -1368,11 +1380,11 @@ input:focus{
     50%{
 
         filter:
-            blur(48px)
-            brightness(.27)
-            saturate(.92);
+            blur(10px)
+            brightness(.78)
+            saturate(.0);
 
-        transform:scale(1.28);
+        transform:scale(1.12);
 
     }
 
@@ -1390,11 +1402,11 @@ input:focus{
     100%{
 
         filter:
-            blur(45px)
-            brightness(.22)
-            saturate(.80);
+            blur(8px)
+            brightness(.72)
+            saturate(.0);
 
-        transform:scale(1.25);
+        transform:scale(1.10);
 
     }
 

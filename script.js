@@ -91,9 +91,9 @@ window.addEventListener("load", () => {
             playerPage.classList.remove("hidden");
             playerPage.classList.add("fade-in");
 
-        }, 1000);
+        }, 2000);
 
-    }, 3000);
+    }, 5000);
 
 });
 
