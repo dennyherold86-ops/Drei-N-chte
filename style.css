@@ -53,11 +53,11 @@ body{
         translate(var(--moveX), var(--moveY));
 
     filter:
-        blur(.8px)
+        blur(.15px)
         brightness(.75)
-        saturate(.0);
+        saturate(.50);
 
-    z-index:-3;
+    z-index: index -3;
 
 }
 
@@ -1162,7 +1162,7 @@ input:focus{
 
     pointer-events:none;
 
-    z-index:-1;
+    z-index:-2;
 
 }
 
@@ -1239,9 +1239,9 @@ input:focus{
 .background-playing{
 
     filter:
-        blur(8px)
+        blur(15px)
         brightness(.75)
-        saturate(0);
+        saturate(1);
 
     transition:filter 2s ease;
 
@@ -1281,7 +1281,7 @@ input:focus{
 
     pointer-events:none;
 
-    z-index:-1;
+    z-index:-2;
 
 }
 
@@ -1358,9 +1358,9 @@ input:focus{
     0%{
 
         filter:
-            blur(8px)
+            blur(15px)
             brightness(.72)
-            saturate(.0);
+            saturate(.50);
 
         transform:scale(1.10);
 
@@ -1380,9 +1380,9 @@ input:focus{
     50%{
 
         filter:
-            blur(10px)
+            blur(15px)
             brightness(.78)
-            saturate(.0);
+            saturate(.50);
 
         transform:scale(1.12);
 
@@ -1402,9 +1402,9 @@ input:focus{
     100%{
 
         filter:
-            blur(8px)
+            blur(15px)
             brightness(.72)
-            saturate(.0);
+            saturate(.50);
 
         transform:scale(1.10);
 
